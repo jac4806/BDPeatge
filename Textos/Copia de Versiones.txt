@@ -1,0 +1,64 @@
+  03/05/2010  V 0.3     Primera version operativa
+
+  06/05/2010  V 0.3.1   Se actualizan los campos de la tabla stock "Palomar,
+                        Washington y Calderas" tanto en Salidas como en Entradas.
+
+  17/05/2010  V 0.5     Se añaden los Forms de Stock y de Edicion.
+                        Se crea una UNIT de variables comunes.
+                        Se centran todas las pantallas.
+                        se crea la Variable Codigo que pasa de todas las paginas
+                        a la de Editar.
+
+  20/05/2010  V 0.5.1   Corregidas las excepciones por valor de campos vacios.
+                        Se añaden botones de Editar  en Salidas y Entradas.
+                        Se añade campo de Observaciones.
+
+  22/05/2010  V 0.5.2   En el Form Stock se borra el campo codigo cada vez que
+                        se imtroducen datos.
+                        Añadidas las busquedas en la tabla Stock para cualquiera
+                        de los tres campos.
+
+  25/05/2010  V 0.5.3   Corregida la duplicidad de la busqueda por contenido
+                        campo "Descripcion" repetido.
+
+  01/06/2010  V 1.0     Se modifica la pantalla de inicio, se hace mas grande.
+                        se añaden los Informes para imprimir.
+                        Se corrigen varios Bugs.
+
+  02/06/2010  V 1.1     Se añade un ChecBox en la tabla Stock para buscar el
+                        material que esta por debajo del punt de comabda excluyendo
+                        si este es 0.
+                        Corregidos los errores de intrucción de codigo en Stock y Editar
+
+  10/06/2010  V 1.2     Se cambia la forma de almacenar las imagenes, ahora se utilizan
+                        hipervinculos.
+                        Se modifican los informes`para iprimir.
+
+  15/06/2010  V 1.2.1   Cambio del tamaño de la fuente "Arial 10".
+                        Se desconecta el ADOConection de la pagina INICIO para que deje
+                        de dar error al abrir la base.
+
+  18/07/2010  V 1.2.3   Se eliminan los hipervinculos de las imagenes y se vuelven a
+                        añadir a la base.
+
+   26/07/2010  V 1.3    Se añade la busqueda de las Puertas y los cristales Intermedios.
+                        Se corrige el Informe stock para separarlo por grupos.
+
+   05/08/2010  V 1.3.1  Se añade el campo Posicion de solicitud.
+
+   6/08/2010   V 1.3.2  Se corrigen varios fallos
+
+   30/09/2010  V 1.4.0  Se añade la imagen del componente en las Entradas.
+                        Corregidos varios errores.
+
+   05/10/10   V 1.4.2   Corregidos probles de sincronizacion entre los form Entradas
+                        y Editar.
+                        Se piden permisos para modificar , borrar y crear registros.
+
+   18/10/2010   V 1.4.3 Añadimos un form "Aviso" para detectar campos de entrada vacios.
+
+
+    20/10/2010  V 1.4.5 Se añade un campo de fecha de revision  a la base Stock.
+                        En el form Stock añadimos un boton para actualizar la fecha de la revision.
+                        Incluimos la posibilidad de hacer un zoom de la imagen clicando en ella.
+                        Se corrigen algunos fallos.            

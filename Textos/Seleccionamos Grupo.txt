@@ -1,0 +1,85 @@
+//-------------Seleccionamos Grupo-------------------//
+procedure TF_BDPeatgeV10.CC_GrupoSelect(Sender: TObject);
+begin
+CC_Descripcion.DropDownCount:=28;
+b:=1;
+BorrarCampos;
+b:=0;
+IndexGrupo:=CC_Grupo.Text;
+items:=0;
+Memo_Movimientos_Ent.Lines.Clear;
+Memo_Movimientos_sal.Lines.Clear;
+IndexImagen:=ExtractFilePath(Application.ExeName) + '\Logo.bmp';
+Imagen_1.Picture.LoadFromFile(IndexImagen);
+CC_Descripcion.Items.Clear;
+ADOTStock.First;
+  while not ADOTStock.Eof do
+          begin
+            if CB_FS27.Checked=True then
+              begin
+              if CC_Grupo.text = ADOTStock.FieldByName('Grupo').AsString then
+                if  ADOTStock.FieldByName('Receptor').AsString='S27' then
+                  begin
+                  CC_Descripcion.Items.Add(ADOTStock.FieldByName('Descripcion').AsString);
+                  items:=items+1;
+                  E_Items.Text:=IntToStr(items);
+                  end;
+              end
+            else
+              if CB_Cristales.Checked=True then
+                begin
+                  if CC_Grupo.Text='AUTOMATIC' then
+                      begin
+                      CC_Destino_Sal.Items.LoadFromFile(ExtractFilePath(Application.ExeName) + '\AUTOMATIC.txt');
+                      //GB_Filtros.Visible:=True;
+                      if CB_Cristales.Checked=True then
+                        begin
+                          CC_Descripcion.Items.Clear;
+                          CC_Descripcion.Items.LoadFromFile(ExtractFilePath(Application.ExeName) + '\C_AUTOMATIC.txt');
+                        end;
+                      end
+                  else
+
+                  if CC_Grupo.Text='GUNNEBO' then
+                    begin
+                    CC_Destino_Sal.Items.LoadFromFile(ExtractFilePath(Application.ExeName) + '\GUNNEBO.txt');
+                    //GB_Filtros.Visible:=True;
+                    if CB_Cristales.Checked=True then
+                      begin
+                      CC_Descripcion.Items.Clear;
+                      CC_Descripcion.Items.LoadFromFile(ExtractFilePath(Application.ExeName) + '\C_GUNNEBO.txt');
+                      end;
+                    end
+                  else
+                  if CC_Grupo.Text='PROYTECSA' then
+                    begin
+                    CC_Destino_Sal.Items.LoadFromFile(ExtractFilePath(Application.ExeName) + '\PROYTECSA.txt');
+                    //GB_Filtros.Visible:=True;
+                    if CB_Cristales.Checked=True then
+                      begin
+                      CC_Descripcion.Items.Clear;
+                      CC_Descripcion.Items.LoadFromFile(ExtractFilePath(Application.ExeName) + '\C_PROYTECSA.txt');
+                      end;
+                    end
+                  else
+                    begin
+                    CB_Cristales.Checked:=False;
+                    //GB_Filtros.Visible:=False;
+                    end;
+                  if CC_Descripcion.Items.Count<28 then
+                      CC_Descripcion.DropDownCount:=CC_Descripcion.Items.Count
+                  else
+                      CC_Descripcion.DropDownCount:=28;
+                end
+              else
+               if CC_Grupo.text = ADOTStock.FieldByName('Grupo').AsString then
+                  begin
+                  CC_Descripcion.Items.Add(ADOTStock.FieldByName('Descripcion').AsString);
+                  items:=items+1;
+                  E_Items.Text:=IntToStr(items);
+                  end;
+
+          ADOTStock.Next;
+          end;
+CC_Descripcion.Perform(CB_SHOWDROPDOWN,1,0);          
+end;

@@ -1,0 +1,149 @@
+Taller
+Personal
+Linea
+Dependencía Diagonal
+Dependencía Gorg
+Dependencía Sagrera
+Dependencía Urquinaona
+Alfons X
+Arc de Triomf
+Artigues-Sant Adrià
+Av. Carrilet
+Bac de Roda
+Badal
+Badalona Pompeu Fabra
+Barceloneta
+Baró de Viver
+Bellvitge
+Besòs
+Besòs Mar
+Bogatell
+Camp de l'Arpa
+Can Boixeres
+Can Cuiàs
+Can Peixauet
+Can Serra
+Can Vidalet
+Can Zam
+Canyelles
+Casa de l'Aigua
+Catalunya L1
+Catalunya L3
+Ciutadella
+Ciutat Meridiana
+Clot L1
+Clot L2
+Collblanc
+Congrès
+Cornellà Centre
+Cotxeres BUS
+Diagonal L3
+Diagonal L5
+Drassanes
+El Carmelo
+El Coll La Teixonera
+Encants
+Entença
+Ernest Lluch
+Església Major
+Espanya L1
+Espanya L3
+Fabra i Puig
+Florida
+Fondo L1
+Fontana
+Furgoneta F-1
+Furgoneta F-2
+Furgoneta F-3
+Furgoneta F-4
+Furgoneta F-5
+Furgoneta F-6
+Gavarra
+Girona
+Glòries
+Gorg
+Guinardó
+Horta
+Hospital Clínic
+Hospital de Bellvitge
+Hostafrancs
+Jaume I
+Joanic
+Just Oliveres
+La Florida
+La Pau L2
+La Pau  
+Les Corts
+Lesseps
+Liceu
+Llacuna
+Llucmajor
+Maragall L4
+Maragall L5
+Maresme|Fòrum 
+Maria Cristina
+Marina
+Mercat Nou
+Montbau
+Monumental
+Mundet
+Navas
+Palau Reial
+Paral.lel L2
+Paral.lel  Funicular
+Paral.lel L3
+Parc de Montjuïc
+Passeig de Gràcia L2
+Passeig de Gràcia L3
+Passeig de Gràcia L4
+Penitents
+Pep Ventura
+Plaça de Sants L1
+Plaça de Sants L5
+Plaça del Centre
+Poble Sec
+Poblenou
+Pubilla Cases
+Rocafort
+Roquetes
+Sagrada Família L2
+Sagrada Família L5
+Sagrera L1
+Sagrera L5
+Sant Andreu
+Sant Antoni
+Sant Ildefons
+Sant Martí
+Sant Pau 2 de Mayo
+Sant Roc
+Santa Coloma
+Santa Eulàlia
+Sants Estació L3
+Sants Estació L5
+Selva de Mar
+Singuerlin
+Tarragona
+Tetuan
+Torras i Bages
+Torrassa
+Torre Baró|Vallbona
+Trinitat Nova L3
+Trinitat Nova L4
+Trinitat Vella
+Universitat L1
+Universitat L2
+Urgell
+Urquinaona
+Urquinaona L4
+Vall d'Hebron
+Vall d'Hebron L5
+Vallcarca
+Valldaurat
+Verdaguer L4
+Verdaguer L5
+Verneda
+Via Júlia
+Vilapicina
+Virrei Amat
+Washington
+Zona Universitària
