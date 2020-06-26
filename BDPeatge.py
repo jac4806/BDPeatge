@@ -1,3 +1,4 @@
+#Modificacion de hoy 26/06/2020
 import sys
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QDialog,QMainWindow,QMessageBox
