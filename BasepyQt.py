@@ -62,10 +62,11 @@ class Example(QWidget):
         self.setLayout(vbx)
 
     def cargarDatos(self, event):
+
+        grupo=self.txtName.text()
         index = 0
         query = QSqlQuery()
-        query.exec_("select * from Stock")
-
+        query.exec_("select * from Stock where Grupo like '%"+ grupo+"%'")
         while query.next():
             ids = query.value(0)
             nombre = query.value(1)
@@ -109,9 +110,9 @@ class Example(QWidget):
                     "driver documentation for information how to build it.\n\n"
                     "Click Cancel to exit.", QMessageBox.Cancel)
             return False
-        print("Hasta Aqui Primero")
+       
         return True
-        print("Hasta Aqui Segundo")
+        
 
 
     def db_create(self):
