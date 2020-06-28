@@ -378,17 +378,12 @@
       <x>240</x>
       <y>620</y>
       <width>471</width>
-      <height>25</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="currentText">
-     <string>Esto es una prueba</string>
+     <string/>
     </property>
-    <item>
-     <property name="text">
-      <string>Esto es una prueba</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="CB_Grupo">
     <property name="geometry">
@@ -396,17 +391,18 @@
       <x>20</x>
       <y>620</y>
       <width>171</width>
-      <height>25</height>
+      <height>30</height>
      </rect>
     </property>
+    <property name="currentText">
+     <string/>
+    </property>
     <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <property name="minimumContentsLength">
      <number>0</number>
     </property>
-    <item>
-     <property name="text">
-      <string>EXPENDEDORA</string>
-     </property>
-    </item>
    </widget>
    <widget class="QPushButton" name="B_Izq">
     <property name="geometry">
