@@ -44,11 +44,17 @@
    <widget class="QTextEdit" name="E_Revisado">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>150</y>
+      <x>181</x>
+      <y>151</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="L_CAlmacen">
@@ -56,7 +62,7 @@
      <rect>
       <x>20</x>
       <y>210</y>
-      <width>91</width>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
@@ -67,11 +73,17 @@
    <widget class="QTextEdit" name="E_CAlmacen">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>200</y>
+      <x>181</x>
+      <y>201</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="L_PComanda">
@@ -79,7 +91,7 @@
      <rect>
       <x>20</x>
       <y>310</y>
-      <width>131</width>
+      <width>141</width>
       <height>16</height>
      </rect>
     </property>
@@ -90,11 +102,17 @@
    <widget class="QTextEdit" name="E_PComanda">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>300</y>
+      <x>231</x>
+      <y>301</y>
       <width>61</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="L_CFabrica">
@@ -113,11 +131,17 @@
    <widget class="QTextEdit" name="E_CFabrica">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>250</y>
-      <width>111</width>
+      <x>121</x>
+      <y>251</y>
+      <width>171</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QGroupBox" name="GB_Stock">
@@ -161,16 +185,6 @@
       <string>CALDERAS:</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="E_Calderas">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="L_Total">
      <property name="geometry">
       <rect>
@@ -197,36 +211,6 @@
       <string>WASHINTON:</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="E_Almacen">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="E_Washinton">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>130</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="E_Total">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>180</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
    </widget>
    <widget class="QGroupBox" name="GB_Observaciones">
     <property name="geometry">
@@ -244,10 +228,13 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
-       <width>271</width>
-       <height>131</height>
+       <y>30</y>
+       <width>281</width>
+       <height>151</height>
       </rect>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
      </property>
      <property name="plainText">
       <string/>
@@ -277,16 +264,84 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>30</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
      <property name="placeholderText">
-      <string>110-256987</string>
+      <string/>
      </property>
     </widget>
+   </widget>
+   <widget class="QTextEdit" name="E_Total">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>530</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="E_Calderas">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>380</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="E_Washinton">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>480</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="E_Almacen">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>430</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_2">
@@ -444,14 +499,23 @@
      <string>&gt;</string>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QLabel" name="L_Foto">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>20</y>
+      <x>57</x>
+      <y>25</y>
       <width>611</width>
-      <height>551</height>
+      <height>541</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

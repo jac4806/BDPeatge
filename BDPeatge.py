@@ -4,6 +4,7 @@
 #Añadimos el relleno del combo "Descripcion"
 #Modificacion de hoy 28/06/2020
 #Cambiamos la forma de rellenar el combo Grupo
+#Agregamos cargar datos
 
 import sys
 from PyQt5.QtSql import *
@@ -18,9 +19,13 @@ class Form(QDialog, form_class):
     def __init__(self, *args):
         super(Form, self).__init__(*args)
         self.setupUi(self)
-        self.CB_Grupo.currentIndexChanged.connect(self.fillDescripcion)
+        self.CB_Grupo.clear() 
+        self.CB_Grupo.setCurrentIndex(-1) 
+        self.CB_Descripcion.clear() 
+        self.CB_Descripcion.setCurrentIndex(-1)
+        self.CB_Grupo.activated[str].connect(self.fillDescripcion)
         self.B_Tabla.clicked.connect(self.prueba)
-        self.CB_Descripcion.currentIndexChanged.connect(self.buscar)
+        self.CB_Descripcion.activated[str].connect(self.buscar)
 
         self.B_Salir.clicked.connect(self.fn_salir)
     
@@ -35,8 +40,8 @@ class Form(QDialog, form_class):
         query = QSqlQuery()
         query.exec_("select distinct Grupo from Stock")
         while (query.next()):
-            descripcion = query.value(0)
-            self.CB_Grupo.addItem(descripcion) 
+            grupos = query.value(0)
+            self.CB_Grupo.addItem(grupos) 
         self.CB_Grupo.setCurrentIndex(-1)    
 
     def fillDescripcion(self):
@@ -52,10 +57,20 @@ class Form(QDialog, form_class):
             
     def buscar(self):
         descripcion=self.CB_Descripcion.currentText()
-        descripcion="Placa LCM"
         query = QSqlQuery()
         query.exec_("select * from Stock where Descripcion like '"+descripcion+"'")
-        self.E_Codigo.setText(query.value())
+        while (query.next()):
+            self.E_Codigo.setText(query.value(10))
+            self.E_Revisado.setText(query.value(13))
+            self.E_CAlmacen.setText(query.value(2))
+            self.E_CFabrica.setText(query.value(0))
+            self.E_PComanda.setText(str(query.value(7)))
+            self.E_Calderas.setText(str(query.value(4)))
+            self.E_Almacen.setText(str(query.value(3)))
+            self.E_Washinton.setText(str(query.value(5)))
+            self.E_Total.setText(str(query.value(6)))
+            self.E_Observaciones.setPlainText(str(query.value(11)))
+            #self.E_Foto.pixmap('Logo.bmp')
         
 
            
