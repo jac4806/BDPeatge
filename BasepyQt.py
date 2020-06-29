@@ -11,17 +11,17 @@ class Example(QWidget):
         super(Example, self).__init__(parent)
 
         self.table = QTableWidget(0, 3)
-<<<<<<< HEAD
+
         self.table.setHorizontalHeaderLabels(['ID', 'NOMBRE', 'APELLIDO'])
-=======
+
         self.table.setHorizontalHeaderLabels(['Codigo', 'Grupo', 'Descripcion'])
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
+
         self.table.setAlternatingRowColors(True)
         self.table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.table.setSelectionBehavior(QTableWidget.SelectRows)
         self.table.setSelectionMode(QTableWidget.SingleSelection)
 
-<<<<<<< HEAD
+
         self.lblID = QLabel("ID:")
         self.txtID = QLineEdit()
         self.txtID.setPlaceholderText("Numero identificador unico")
@@ -31,7 +31,7 @@ class Example(QWidget):
         self.txtName.setPlaceholderText("Nombre de la persona")
 
         self.lblApellido = QLabel("Apellido:")
-=======
+
         self.lblID = QLabel("Codigo:")
         self.txtID = QLineEdit()
         self.txtID.setPlaceholderText("Numero identificador unico")
@@ -41,7 +41,7 @@ class Example(QWidget):
         self.txtName.setPlaceholderText("Nombre de la persona")
 
         self.lblApellido = QLabel("Descripcion:")
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
+
         self.txtApellido = QLineEdit()
         self.txtApellido.setPlaceholderText("Apellido de la persona")
 
@@ -78,18 +78,17 @@ class Example(QWidget):
         self.setLayout(vbx)
 
     def cargarDatos(self, event):
-<<<<<<< HEAD
+
         index = 0
         query = QSqlQuery()
         query.exec_("select * from person")
 
-=======
 
         grupo=self.txtName.text()
         index = 0
         query = QSqlQuery()
         query.exec_("select * from Stock where Grupo like '%"+ grupo+"%'")
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
+
         while query.next():
             ids = query.value(0)
             nombre = query.value(1)
@@ -108,11 +107,11 @@ class Example(QWidget):
         apellido = self.txtApellido.text()
 
         query = QSqlQuery()
-<<<<<<< HEAD
+
         query.exec_("insert into person values({0}, '{1}', '{2}')".format(ids, nombre, apellido))
-=======
+
         query.exec_("insert into Stock values({0}, '{1}', '{2}')".format(ids, nombre, apellido))
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
+
 
     def eliminarDatos(self, event):
         selected = self.table.currentIndex()
@@ -128,13 +127,13 @@ class Example(QWidget):
 
     def db_connect(self, filename, server):
         
-<<<<<<< HEAD
+
         db = QSqlDatabase.addDatabase(server)
         db.setDatabaseName(filename)
-=======
+
         db = QSqlDatabase.addDatabase("QSQLITE")
         db.setDatabaseName("Base.db")
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
+
         if not db.open():
             QMessageBox.critical(None, "Cannot open database",
                     "Unable to establish a database connection.\n"
@@ -142,14 +141,13 @@ class Example(QWidget):
                     "driver documentation for information how to build it.\n\n"
                     "Click Cancel to exit.", QMessageBox.Cancel)
             return False
-<<<<<<< HEAD
+
         return True
-=======
+
        
         return True
         
 
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
 
     def db_create(self):
         query = QSqlQuery()
@@ -172,10 +170,10 @@ class Example(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ejm = Example()
-<<<<<<< HEAD
+
     ejm.init('datafile', 'QSQLITE')
-=======
+
     ejm.init('Base.db', 'QSQLITE')
->>>>>>> ced2be01a0eb37979bc0456ed2fba6b793136f50
+
     ejm.show()
     sys.exit(app.exec_())

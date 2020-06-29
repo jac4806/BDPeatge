@@ -18,31 +18,16 @@ class Form(QDialog, form_class):
     def __init__(self, *args):
         super(Form, self).__init__(*args)
         self.setupUi(self)
-        #self.fillGrupos()
         self.CB_Grupo.currentIndexChanged.connect(self.fillDescripcion)
         self.B_Tabla.clicked.connect(self.prueba)
-
+        self.CB_Descripcion.currentIndexChanged.connect(self.buscar)
 
         self.B_Salir.clicked.connect(self.fn_salir)
     
      
     def prueba(self):
-        grupo=self.CB_Grupo.currentText()
-        self.E_Observaciones.setPlainText(grupo)
+       form_class, base_class = loadUiType('F_Tabla.ui')
 
-    def fillDescripcion(self):
-        self.CB_Descripcion.clear() 
-        self.CB_Descripcion.setCurrentIndex(0) 
-        grupo=self.CB_Grupo.currentText()
-        print(grupo)
-        query = QSqlQuery()
-        query.exec_("select * from Stock where Grupo like '%"+grupo+"%'")
-        while (query.next()):
-            descripcion = query.value(1)
-            self.CB_Descripcion.addItem(descripcion) 
-            
-        self.CB_Descripcion.setCurrentIndex(-1)    
-            
     def fillGrupos(self):
         self.CB_Grupo.clear() 
         self.CB_Grupo.setCurrentIndex(0) 
@@ -52,8 +37,28 @@ class Form(QDialog, form_class):
         while (query.next()):
             descripcion = query.value(0)
             self.CB_Grupo.addItem(descripcion) 
-            
         self.CB_Grupo.setCurrentIndex(-1)    
+
+    def fillDescripcion(self):
+        self.CB_Descripcion.clear() 
+        self.CB_Descripcion.setCurrentIndex(0) 
+        grupo=self.CB_Grupo.currentText()
+        query = QSqlQuery()
+        query.exec_("select * from Stock where Grupo like '%"+grupo+"%'")
+        while (query.next()):
+            descripcion = query.value(1)
+            self.CB_Descripcion.addItem(descripcion) 
+        self.CB_Descripcion.setCurrentIndex(0)    
+            
+    def buscar(self):
+        descripcion=self.CB_Descripcion.currentText()
+        descripcion="Placa LCM"
+        query = QSqlQuery()
+        query.exec_("select * from Stock where Descripcion like '"+descripcion+"'")
+        self.E_Codigo.setText(query.value())
+        
+
+           
         
     def fn_salir(self,event):
         QApplication.destroyed()
