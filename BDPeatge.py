@@ -70,7 +70,7 @@ class Form(QDialog, form_class):
             self.E_Washinton.setText(str(query.value(5)))
             self.E_Total.setText(str(query.value(6)))
             self.E_Observaciones.setPlainText(str(query.value(11)))
-            #self.E_Foto.pixmap('Logo.bmp')
+            self.L_Foto.pixmap('Logo.bmp')
         
 
            
