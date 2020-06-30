@@ -20,6 +20,8 @@ class Form(QDialog, form_class):
     def __init__(self, *args):
         super(Form, self).__init__(*args)
         self.setupUi(self)
+        self.B_Imagen2.setEnabled(False)
+        self.B_Imagen3.setEnabled(False)
         self.CB_Grupo.clear() 
         self.CB_Grupo.setCurrentIndex(-1) 
         self.CB_Descripcion.clear() 
@@ -27,7 +29,8 @@ class Form(QDialog, form_class):
         self.CB_Grupo.activated[str].connect(self.fillDescripcion)
         self.B_Tabla.clicked.connect(self.prueba)
         self.CB_Descripcion.activated[str].connect(self.buscar)
-
+        self.B_Anterior.clicked.connect(self.anterior)
+        self.B_Siguiente.clicked.connect(self.anterior)
         self.B_Salir.clicked.connect(self.fn_salir)
     
      
@@ -72,10 +75,26 @@ class Form(QDialog, form_class):
             self.E_Washinton.setText(str(query.value(5)))
             self.E_Total.setText(str(query.value(6)))
             self.E_Observaciones.setPlainText(str(query.value(11)))
+            if query.value(14)!= '':
+                self.B_Imagen2.setEnabled(True)
+            else:
+                self.B_Imagen2.setEnabled(False)    
+            if query.value(15)!= '':
+                self.B_Imagen3.setEnabled(True)
+            else:
+                self.B_Imagen3.setEnabled(False)     
             self.L_Foto.setPixmap(QPixmap('Logo'))
         
+    def siguiente(self):
+        index=self.CB_Descripcion.currentIndex()
+        self.CB_Descripcion.setCurrentIndex(index+1) 
+        self.buscar()
 
-           
+
+    def anterior(self):        
+        index=self.CB_Descripcion.currentIndex() 
+        self.CB_Descripcion.setCurrentIndex(index+1) 
+        self.buscar()   
         
     def fn_salir(self,event):
         resultado = QMessageBox.question(self,"Salir...","¿Quieres salir....?",
