@@ -4,11 +4,12 @@
 #Añadimos el relleno del combo "Descripcion"
 #Modificacion de hoy 28/06/2020
 #Cambiamos la forma de rellenar el combo Grupo
-#Agregamos cargar datos
+#Agregamos cargar datos y Foto
 
 import sys
 from PyQt5.QtSql import *
 from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtGui import QIcon, QFont, QPalette, QImage, QPixmap
 from PyQt5.QtWidgets import QApplication, QDialog,QMainWindow,QMessageBox
 from PyQt5.uic import loadUiType
 from io import open
@@ -31,7 +32,8 @@ class Form(QDialog, form_class):
     
      
     def prueba(self):
-       form_class, base_class = loadUiType('F_Tabla.ui')
+    	#pixmap = QPixmap('imagen.jpg')
+    	self.L_Foto.setPixmap(QPixmap('Logo'))
 
     def fillGrupos(self):
         self.CB_Grupo.clear() 
@@ -70,20 +72,18 @@ class Form(QDialog, form_class):
             self.E_Washinton.setText(str(query.value(5)))
             self.E_Total.setText(str(query.value(6)))
             self.E_Observaciones.setPlainText(str(query.value(11)))
-            self.L_Foto.pixmap('Logo.bmp')
+            self.L_Foto.setPixmap(QPixmap('Logo'))
         
 
            
         
     def fn_salir(self,event):
-        QApplication.destroyed()
-        '''
         resultado = QMessageBox.question(self,"Salir...","¿Quieres salir....?",
         QMessageBox.Yes| QMessageBox.No)
-        if resultado == QMessageBox.Yes 
-            miConexion.close()
+        if resultado == QMessageBox.Yes:
+            #db.close()
             QApplication.destroyed()
-        '''
+       
      
     def db_connect(self):
         db = QSqlDatabase.addDatabase("QSQLITE")
