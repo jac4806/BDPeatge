@@ -36,7 +36,7 @@ class Form(QDialog, form_class):
      
     def prueba(self):
     	#pixmap = QPixmap('imagen.jpg')
-    	self.L_Foto.setPixmap(QPixmap('Logo'))
+    	self.L_Foto.setPixmap(QPixmap('Imagenes/imagen'))
 
     def fillGrupos(self):
         self.CB_Grupo.clear() 
@@ -83,7 +83,7 @@ class Form(QDialog, form_class):
                 self.B_Imagen3.setEnabled(True)
             else:
                 self.B_Imagen3.setEnabled(False)     
-            self.L_Foto.setPixmap(QPixmap('Logo'))
+            self.L_Foto.setPixmap(QPixmap('Imagenes/Logo'))
         
     def siguiente(self):
         index=self.CB_Descripcion.currentIndex()
